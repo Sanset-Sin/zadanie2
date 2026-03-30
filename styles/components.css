@@ -33,9 +33,8 @@
 .widget__content {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   flex: 1;
-  min-width: 0;
 }
 
 .icon-btn,
@@ -54,7 +53,6 @@
   display: grid;
   place-items: center;
   font-size: 1.15rem;
-  flex-shrink: 0;
 }
 
 .icon-btn--danger,
@@ -72,16 +70,6 @@
 
 .inline-form {
   flex-direction: row;
-  align-items: stretch;
-}
-
-.inline-form .input {
-  flex: 1;
-  min-width: 0;
-}
-
-.inline-form .ghost-btn {
-  flex-shrink: 0;
 }
 
 .input {
@@ -175,9 +163,8 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   min-height: 160px;
-  min-width: 0;
 }
 
 .stat-row {
@@ -198,10 +185,9 @@
 
 .profile-card {
   display: grid;
-  grid-template-columns: 86px minmax(0, 1fr);
+  grid-template-columns: 86px 1fr;
   gap: 16px;
   align-items: start;
-  min-width: 0;
 }
 
 .profile-card__body {
@@ -221,12 +207,14 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(95px, 1fr));
   gap: 12px;
   margin-top: 8px;
 }
 
 .mini-stat {
+  min-width: 0;
+  min-height: 96px;
   padding: 12px 10px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.05);
@@ -234,27 +222,26 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 6px;
-  min-height: 80px;
-  overflow: hidden;
+}
+
+.mini-stat strong {
+  display: block;
+  font-size: 1.7rem;
+  line-height: 1;
+  font-weight: 700;
 }
 
 .mini-stat span {
   display: block;
   color: var(--muted);
-  font-size: 0.75rem; /* уменьшили */
+  font-size: 0.74rem;
   line-height: 1.2;
+  max-width: 100%;
   word-break: break-word;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* максимум 2 строки */
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
-.mini-stat strong {
-  display: block;
-  font-size: 1.5rem; /* чуть меньше */
-  line-height: 1;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .text-link {
@@ -273,7 +260,7 @@
   }
 
   .mini-stat {
-    min-height: 78px;
+    min-height: 82px;
   }
 }
 
@@ -290,9 +277,4 @@
     flex-direction: column;
     align-items: stretch;
   }
-
-  .todo-summary {
-  margin-top: -2px;
-  margin-bottom: 2px;
-}
 }
