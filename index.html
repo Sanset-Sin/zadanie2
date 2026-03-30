@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevFlow Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Практическое задание 2</p>
+          <h1>DevFlow Dashboard</h1>
+          <p class="hero-text">
+            Интерактивная панель управления UI-компонентами для разработчика: задачи,
+            идеи, погода и GitHub-профиль в одном модульном приложении.
+          </p>
+        </div>
+
+        <div class="controls-panel">
+          <button class="toolbar-btn" data-widget="todo">+ ToDo</button>
+          <button class="toolbar-btn" data-widget="quote">+ Quote</button>
+          <button class="toolbar-btn" data-widget="weather">+ Weather API</button>
+          <button class="toolbar-btn" data-widget="github">+ GitHub API</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="dashboard-section">
+          <div class="section-heading">
+            <h2>Активные виджеты</h2>
+            <p>
+              Каждый виджет управляет собственным состоянием, а дашборд отвечает за
+              общую сетку и жизненный цикл компонентов.
+            </p>
+          </div>
+
+          <div id="dashboard" class="dashboard-grid" aria-live="polite"></div>
+        </section>
+      </main>
+    </div>
+
+    <template id="empty-state-template">
+      <div class="empty-state">
+        <h3>Панель пока пустая</h3>
+        <p>Добавь первый виджет кнопками сверху.</p>
+      </div>
+    </template>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
