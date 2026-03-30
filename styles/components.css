@@ -191,7 +191,8 @@
 .profile-card__body {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
+  min-width: 0;
 }
 
 .avatar {
@@ -204,23 +205,32 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 4px;
+  grid-template-columns: repeat(3, minmax(110px, 1fr));
+  gap: 12px;
+  margin-top: 8px;
 }
 
 .mini-stat {
-  padding: 12px;
+  padding: 14px 12px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.05);
   text-align: center;
+  min-width: 0;
 }
 
 .mini-stat span {
   display: block;
   color: var(--muted);
-  font-size: 0.82rem;
-  margin-bottom: 4px;
+  font-size: 0.85rem;
+  line-height: 1.25;
+  margin-bottom: 6px;
+  word-break: break-word;
+}
+
+.mini-stat strong {
+  display: block;
+  font-size: 1.8rem;
+  line-height: 1;
 }
 
 .text-link {
@@ -233,16 +243,18 @@
   text-decoration: underline;
 }
 
+@media (max-width: 700px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 560px) {
   .inline-form {
     flex-direction: column;
   }
 
   .profile-card {
-    grid-template-columns: 1fr;
-  }
-
-  .stats-grid {
     grid-template-columns: 1fr;
   }
 
