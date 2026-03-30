@@ -8,7 +8,7 @@ export class ToDoWidget extends UIComponent {
 
   createContent() {
     const root = document.createElement('div');
-    root.className = 'todo-widget';
+    root.className = 'todo-widget stack';
 
     const form = document.createElement('form');
     form.className = 'inline-form';

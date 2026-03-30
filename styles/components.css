@@ -210,17 +210,29 @@
 }
 
 .mini-stat {
-  padding: 12px;
+  padding: 12px 10px;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.05);
   text-align: center;
+  min-width: 0;
 }
 
 .mini-stat span {
   display: block;
   color: var(--muted);
-  font-size: 0.82rem;
+  font-size: 0.7rem;
+  line-height: 1.2;
   margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mini-stat strong {
+  display: block;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 .text-link {
