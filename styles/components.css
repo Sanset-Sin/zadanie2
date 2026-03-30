@@ -132,6 +132,17 @@
   gap: 10px;
 }
 
+.todo-stats {
+    margin-top: 4px;
+    opacity: 0.8;
+}
+
+.todo-empty {
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+}
+
 .todo-item {
   display: flex;
   justify-content: space-between;
@@ -277,4 +288,10 @@
     flex-direction: column;
     align-items: stretch;
   }
+
+  .todo-widget {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* вот это ключевое */
+  } 
 }
