@@ -3,7 +3,7 @@ import { UIComponent } from './UIComponent.js';
 export class GitHubWidget extends UIComponent {
   constructor(config) {
     super(config);
-    this.username = 'octocat';
+    this.username = 'Sanset-Sin';
     this.state = {
       loading: false,
       error: '',
