@@ -12,6 +12,10 @@ export class WeatherWidget extends UIComponent {
       windspeed: null,
       weatherCode: null,
       updatedAt: '',
+<<<<<<< HEAD
+      advice: '',
+=======
+>>>>>>> f37c79b27c4006bd460f2ffe3c562d9a0d501b08
     };
   }
 
@@ -78,6 +82,13 @@ export class WeatherWidget extends UIComponent {
           <span class="stat-label">Состояние</span>
           <strong>${this.getWeatherDescription(this.state.weatherCode)}</strong>
         </div>
+<<<<<<< HEAD
+        <div class="tip-card">
+          <span class="tip-card__label">Рекомендация на день</span>
+          <strong>${this.state.advice}</strong>
+        </div>
+=======
+>>>>>>> f37c79b27c4006bd460f2ffe3c562d9a0d501b08
       `;
     };
 
@@ -116,6 +127,10 @@ export class WeatherWidget extends UIComponent {
           windspeed: current.wind_speed_10m,
           weatherCode: current.weather_code,
           updatedAt: new Date(current.time).toLocaleString('ru-RU'),
+<<<<<<< HEAD
+          advice: this.getWeatherAdvice(current.temperature_2m, current.wind_speed_10m, current.weather_code),
+=======
+>>>>>>> f37c79b27c4006bd460f2ffe3c562d9a0d501b08
         };
       } catch (error) {
         this.state.loading = false;
@@ -144,6 +159,29 @@ export class WeatherWidget extends UIComponent {
     return root;
   }
 
+<<<<<<< HEAD
+  getWeatherAdvice(temperature, windspeed, code) {
+    if (code >= 61 || code === 51 || code === 53 || code === 55 || code === 80 || code === 95) {
+      return 'На улице мокро или нестабильно: лучше взять зонт и не планировать долгую прогулку.';
+    }
+
+    if (temperature <= 0) {
+      return 'Холодно. Одевайся теплее и не забывай про перчатки.';
+    }
+
+    if (temperature >= 25) {
+      return 'Тепло: можно выйти пройтись или устроить короткую прогулку между задачами.';
+    }
+
+    if (windspeed >= 30) {
+      return 'Сегодня ветрено. Для комфортной дороги лучше выбрать закрытую одежду.';
+    }
+
+    return 'Погода спокойная: хороший день, чтобы закрыть дела и выбраться ненадолго из дома.';
+  }
+
+=======
+>>>>>>> f37c79b27c4006bd460f2ffe3c562d9a0d501b08
   getWeatherDescription(code) {
     const map = {
       0: 'Ясно',
